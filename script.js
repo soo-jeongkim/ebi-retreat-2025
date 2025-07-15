@@ -30,10 +30,10 @@ const questions = [
     {
         question: "What is the first thing you do when you go into the office?",
         options: [
-            { text: "You check your emails > no one emails you", organelle: "nucleus" },
-            { text: "You check the jobs you submitted last night > all your jobs failed", organelle: "mitochondria" },
-            { text: "You chat to your colleague > they're locked in", organelle: "lysosome" },
-            { text: "You read papers > you got scooped", organelle: "ribosome" }
+            { text: "You check your emails", errorMessage: "no one emails you", organelle: "nucleus" },
+            { text: "You check the jobs you submitted last night", errorMessage: "all your jobs failed", organelle: "mitochondria" },
+            { text: "You chat to your colleague", errorMessage: "they're locked in", organelle: "lysosome" },
+            { text: "You read papers", errorMessage: "you got scooped", organelle: "ribosome" }
         ]
     },
     {
@@ -134,14 +134,18 @@ function showQuestion() {
 }
 
 function selectOption(organelle) {
-    // Check if this is a "Go home" option on questions 2 or 3
     const currentQuestionData = questions[currentQuestion];
     const selectedOption = currentQuestionData.options.find(option => option.organelle === organelle);
     
+    // Check if this is a "Go home" option on questions 2 or 3
     if ((currentQuestion === 1 || currentQuestion === 2) && selectedOption.text === "Go home") {
-        // Show motivation screen for questions 2 and 3 (index 1 and 2)
         showMotivationScreen();
-    } else {
+    }
+    // Check if this is question 4 (index 3) with error messages
+    else if (currentQuestion === 3 && selectedOption.errorMessage) {
+        showErrorScreen(selectedOption.errorMessage);
+    }
+    else {
         // Normal flow
         scores[organelle]++;
         currentQuestion++;
@@ -152,6 +156,12 @@ function selectOption(organelle) {
             showResults();
         }
     }
+}
+
+function showErrorScreen(errorMessage) {
+    document.getElementById('quizScreen').style.display = 'none';
+    document.getElementById('errorScreen').style.display = 'block';
+    document.getElementById('errorText').textContent = errorMessage;
 }
 
 function showMotivationScreen() {

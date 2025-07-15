@@ -181,6 +181,30 @@ body {
     transform: scale(1.05);
 }
 
+/* Error Screen */
+.error-screen {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.error-message {
+    margin-bottom: 30px;
+}
+
+.error-message h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #ff8c00;
+    color: #ff0000;
+}
+
+.error-message p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #ffb366;
+    text-shadow: 0 0 5px #ffb366;
+}
+
 .result-title {
     font-size: 1.5rem;
     margin-bottom: 30px;
