@@ -1,93 +1,82 @@
 // Quiz questions and scoring system
 const questions = [
     {
-        question: "How do you prefer to spend your free time?",
+        question: "What time are we taking the bus?",
         options: [
-            { text: "Reading and learning new things", organelle: "nucleus" },
-            { text: "Working out and staying active", organelle: "mitochondria" },
-            { text: "Organizing and cleaning", organelle: "lysosome" },
-            { text: "Creating and building things", organelle: "ribosome" }
+            { text: "7am", organelle: "nucleus" },
+            { text: "8am", organelle: "mitochondria" },
+            { text: "10 shuttle", organelle: "lysosome" },
+            { text: "12 shuttle", organelle: "ribosome" }
         ]
     },
     {
-        question: "What's your communication style?",
+        question: "Your bus doesn't arrive what do you do?",
         options: [
-            { text: "Direct and authoritative", organelle: "nucleus" },
-            { text: "Energetic and enthusiastic", organelle: "mitochondria" },
-            { text: "Helpful and supportive", organelle: "lysosome" },
-            { text: "Detailed and precise", organelle: "ribosome" }
+            { text: "Wait for the next option", organelle: "nucleus" },
+            { text: "Cycle", organelle: "mitochondria" },
+            { text: "Walk", organelle: "lysosome" },
+            { text: "Go home", organelle: "ribosome" }
         ]
     },
     {
-        question: "How do you handle stress?",
+        question: "You arrive but you forgot your badge",
         options: [
-            { text: "Take charge and make decisions", organelle: "nucleus" },
-            { text: "Channel it into productive energy", organelle: "mitochondria" },
-            { text: "Break down problems into manageable pieces", organelle: "lysosome" },
-            { text: "Focus on the task at hand", organelle: "ribosome" }
+            { text: "Don't tell anyone", organelle: "nucleus" },
+            { text: "Tailgate", organelle: "mitochondria" },
+            { text: "Go to security", organelle: "lysosome" },
+            { text: "Go home", organelle: "ribosome" }
         ]
     },
     {
-        question: "What's your ideal work environment?",
+        question: "What is the first thing you do when you go into the office?",
         options: [
-            { text: "A quiet office where I can think", organelle: "nucleus" },
-            { text: "A dynamic, fast-paced setting", organelle: "mitochondria" },
-            { text: "A clean, organized space", organelle: "lysosome" },
-            { text: "A collaborative workshop", organelle: "ribosome" }
+            { text: "You check your emails > no one emails you", organelle: "nucleus" },
+            { text: "You check the jobs you submitted last night > all your jobs failed", organelle: "mitochondria" },
+            { text: "You chat to your colleague > they're locked in", organelle: "lysosome" },
+            { text: "You read papers > you got scooped", organelle: "ribosome" }
         ]
     },
     {
-        question: "How do you approach problem-solving?",
+        question: "You want to take a coffee, where do you go?",
         options: [
-            { text: "Analyze the big picture first", organelle: "nucleus" },
-            { text: "Jump in with energy and enthusiasm", organelle: "mitochondria" },
-            { text: "Break it down and clean up the mess", organelle: "lysosome" },
-            { text: "Build solutions step by step", organelle: "ribosome" }
+            { text: "Dina", organelle: "nucleus" },
+            { text: "Murrays", organelle: "mitochondria" },
+            { text: "You have your instant coffee in the cupboard", organelle: "lysosome" },
+            { text: "Free coffee in the green cafe", organelle: "ribosome" }
         ]
     },
     {
-        question: "What's your leadership style?",
+        question: "Presumably, you should do a bit of work. You're meeting with your collaborators and you haven't done the analysis that you were supposed to do. What excuse do you give?",
         options: [
-            { text: "I'm the boss - clear direction and control", organelle: "nucleus" },
-            { text: "I motivate and energize the team", organelle: "mitochondria" },
-            { text: "I help others grow and develop", organelle: "lysosome" },
-            { text: "I lead by example and hard work", organelle: "ribosome" }
+            { text: "My laptop sensed my stress and shut down in solidarity", organelle: "nucleus" },
+            { text: "I made a bunch of figures but it was too much to put on the slides", organelle: "mitochondria" },
+            { text: "I'm pivoting to a more collaborative model where you do the analysis and I offer moral support", organelle: "lysosome" },
+            { text: "You're honest and you say that you haven't done it", organelle: "ribosome" }
         ]
     },
     {
-        question: "How do you prefer to travel?",
+        question: "Lunch time! You forgot your lunch, what do you do?",
         options: [
-            { text: "Planned trips with clear itineraries", organelle: "nucleus" },
-            { text: "Adventure and exploration", organelle: "mitochondria" },
-            { text: "Relaxing getaways to recharge", organelle: "lysosome" },
-            { text: "Educational trips to learn new skills", organelle: "ribosome" }
+            { text: "You pay a million pounds for murray's lunch", organelle: "nucleus" },
+            { text: "Wait for South Building free food", organelle: "mitochondria" },
+            { text: "Don't wait, pretend like you're at a workshop", organelle: "lysosome" },
+            { text: "Scavenge the fridge", organelle: "ribosome" }
         ]
     },
     {
-        question: "What's your relationship with food?",
+        question: "What bus do you take home?",
         options: [
-            { text: "I'm picky and have specific preferences", organelle: "nucleus" },
-            { text: "I love high-energy foods and snacks", organelle: "mitochondria" },
-            { text: "I prefer clean, healthy options", organelle: "lysosome" },
-            { text: "I enjoy cooking and creating meals", organelle: "ribosome" }
+            { text: "I don't, I already ubered home", organelle: "nucleus" },
+            { text: "1645", organelle: "mitochondria" },
+            { text: "1715", organelle: "lysosome" },
+            { text: "I don't, I sleep at the office", organelle: "ribosome" }
         ]
     },
     {
-        question: "How do you handle change?",
+        question: "Do you have a ticket?",
         options: [
-            { text: "I need time to process and plan", organelle: "nucleus" },
-            { text: "I adapt quickly and find it exciting", organelle: "mitochondria" },
-            { text: "I help others through transitions", organelle: "lysosome" },
-            { text: "I focus on building new routines", organelle: "ribosome" }
-        ]
-    },
-    {
-        question: "What's your superpower?",
-        options: [
-            { text: "Strategic thinking and planning", organelle: "nucleus" },
-            { text: "Unlimited energy and motivation", organelle: "mitochondria" },
-            { text: "Healing and helping others", organelle: "lysosome" },
-            { text: "Building and creating things", organelle: "ribosome" }
+            { text: "Yes", organelle: "nucleus" },
+            { text: "No", organelle: "mitochondria" }
         ]
     }
 ];
@@ -96,19 +85,19 @@ const questions = [
 const organelleDescriptions = {
     nucleus: {
         name: "THE NUCLEUS",
-        description: "You're the control center! Like the nucleus, you're the boss who calls the shots. You have a strong sense of direction and love being in charge. Your strategic mind and organizational skills make you a natural leader. You're protective of your ideas and prefer to think things through before acting. The nucleus contains the cell's DNA - you contain the blueprint for success!"
+        description: "You're the control center! Like the nucleus, you're the boss who calls the shots. You're always early (7am bus crew!) and have everything planned out. You're the one who remembers their badge and has their ticket ready. Your strategic mind keeps you organized even when your laptop shuts down in solidarity. The nucleus contains the cell's DNA - you contain the blueprint for success!"
     },
     mitochondria: {
         name: "THE MITOCHONDRIA",
-        description: "You're the powerhouse! Like the mitochondria, you're full of energy and enthusiasm. You're always on the go and love being active. Your positive energy is contagious and you motivate others around you. You're adaptable and can handle high-pressure situations with ease. The mitochondria produces energy for the cell - you produce energy for your team!"
+        description: "You're the powerhouse! Like the mitochondria, you're full of energy and enthusiasm. You're the one cycling when the bus doesn't show up, tailgating through security, and always finding the energy for Murrays coffee. Your positive energy keeps you going even when all your jobs fail. The mitochondria produces energy for the cell - you produce energy for your team!"
     },
     lysosome: {
         name: "THE LYSOSOME",
-        description: "You're the helper! Like the lysosome, you're all about cleaning up and helping others. You have a nurturing personality and love supporting people. You're great at breaking down complex problems into manageable pieces. Your attention to detail and care for others makes you invaluable. The lysosome breaks down waste and helps the cell - you help break down problems and support your community!"
+        description: "You're the helper! Like the lysosome, you're all about cleaning up and helping others. You're the one who goes to security when you forget your badge, offers moral support to collaborators, and waits for South Building free food. Your nurturing personality makes you great at breaking down complex problems. The lysosome breaks down waste and helps the cell - you help break down problems and support your community!"
     },
     ribosome: {
         name: "THE RIBOSOME",
-        description: "You're the builder! Like the ribosome, you're all about creating and constructing. You love working with your hands and building things from scratch. You're patient, methodical, and take pride in your craftsmanship. You prefer to work in teams and enjoy collaborative projects. The ribosome builds proteins for the cell - you build solutions for the world!"
+        description: "You're the builder! Like the ribosome, you're all about creating and constructing. You're the honest one who admits when you haven't done the analysis, the resourceful one who scavenges the fridge for lunch, and the dedicated one who sleeps at the office. You're patient, methodical, and take pride in your work. The ribosome builds proteins for the cell - you build solutions for the world!"
     }
 };
 
