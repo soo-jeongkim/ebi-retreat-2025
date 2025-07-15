@@ -170,10 +170,12 @@ function showMotivationScreen() {
 }
 
 function continueToNextQuestion() {
+    // Hide both motivation and error screens
     document.getElementById('motivationScreen').style.display = 'none';
+    document.getElementById('errorScreen').style.display = 'none';
     document.getElementById('quizScreen').style.display = 'block';
     
-    // Move to next question without scoring the "Go home" option
+    // Move to next question without scoring the option
     currentQuestion++;
     
     if (currentQuestion < questions.length) {
