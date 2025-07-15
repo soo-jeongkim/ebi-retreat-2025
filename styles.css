@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #ff8c00;
+    font-family: 'Press Start 2P', monospace;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Title Screen */
+.title-screen {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px #ff8c00, 0 0 30px #ff8c00, 0 0 40px #ff8c00;
+    animation: pixelate 0.1s infinite;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    color: #ffb366;
+    text-shadow: 0 0 10px #ffb366;
+}
+
+.start-btn, .restart-btn {
+    background: #000;
+    color: #ff8c00;
+    border: 3px solid #ff8c00;
+    padding: 15px 30px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px 0;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px #ff8c00;
+}
+
+.start-btn:hover, .restart-btn:hover {
+    background: #ff8c00;
+    color: #000;
+    box-shadow: 0 0 30px #ff8c00;
+    transform: scale(1.05);
+}
+
+.instructions {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: #ffb366;
+    line-height: 1.5;
+}
+
+/* Quiz Screen */
+.quiz-screen {
+    width: 100%;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #333;
+    border: 2px solid #ff8c00;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #ff8c00;
+    width: 0%;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px #ff8c00;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    text-shadow: 0 0 10px #ff8c00;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option-btn {
+    background: #000;
+    color: #ff8c00;
+    border: 2px solid #ff8c00;
+    padding: 15px 20px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    box-shadow: 0 0 10px #ff8c00;
+}
+
+.option-btn:hover {
+    background: #ff8c00;
+    color: #000;
+    box-shadow: 0 0 20px #ff8c00;
+    transform: translateX(10px);
+}
+
+.option-btn.selected {
+    background: #ff8c00;
+    color: #000;
+    box-shadow: 0 0 25px #ff8c00;
+}
+
+/* Result Screen */
+.result-screen {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.result-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px #ff8c00;
+}
+
+.organelle-result {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px #ff8c00;
+    animation: pixelate 0.1s infinite;
+}
+
+.organelle-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #ffb366;
+    text-shadow: 0 0 5px #ffb366;
+}
+
+/* Animations */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px #ff8c00, 0 0 30px #ff8c00, 0 0 40px #ff8c00;
+    }
+    to {
+        text-shadow: 0 0 30px #ff8c00, 0 0 40px #ff8c00, 0 0 50px #ff8c00;
+    }
+}
+
+@keyframes pixelate {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(1px, 1px); }
+    50% { transform: translate(-1px, -1px); }
+    75% { transform: translate(1px, -1px); }
+    100% { transform: translate(-1px, 1px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .question-text {
+        font-size: 1rem;
+    }
+    
+    .option-btn {
+        font-size: 0.7rem;
+        padding: 12px 15px;
+    }
+    
+    .organelle-result {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.4rem;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+} 

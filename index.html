@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Organelle Are You?</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="title-screen" id="titleScreen">
+            <h1 class="main-title">WHICH ORGANELLE ARE YOU?</h1>
+            <div class="subtitle">A CELLULAR PERSONALITY QUIZ</div>
+            <button class="start-btn" onclick="startQuiz()">START QUIZ</button>
+            <div class="instructions">
+                <p>Answer 10 questions to discover your true cellf!</p>
+                <p>Use arrow keys or click to navigate</p>
+            </div>
+        </div>
+
+        <div class="quiz-screen" id="quizScreen" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="question-container">
+                <h2 class="question-text" id="questionText"></h2>
+                <div class="options-container" id="optionsContainer"></div>
+            </div>
+        </div>
+
+        <div class="result-screen" id="resultScreen" style="display: none;">
+            <h2 class="result-title">YOU ARE...</h2>
+            <div class="organelle-result" id="organelleResult"></div>
+            <div class="organelle-description" id="organelleDescription"></div>
+            <button class="restart-btn" onclick="restartQuiz()">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
