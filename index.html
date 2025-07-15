@@ -10,6 +10,9 @@
 <body>
     <div class="container">
         <div class="title-screen" id="titleScreen">
+            <div class="landing-image-container">
+                <img src="images/landingpage.jp2" class="landing-image" alt="Landing Page">
+            </div>
             <h1 class="main-title">WHICH ORGANELLE ARE YOU?</h1>
             <div class="subtitle">A CELLULAR PERSONALITY QUIZ</div>
             <button class="start-btn" onclick="startQuiz()">START QUIZ</button>
@@ -31,8 +34,15 @@
 
         <div class="result-screen" id="resultScreen" style="display: none;">
             <h2 class="result-title">YOU ARE...</h2>
+            <div class="organelle-image-container">
+                <img id="organelleImage" class="organelle-image" src="" alt="Organelle">
+            </div>
             <div class="organelle-result" id="organelleResult"></div>
-            <div class="organelle-description" id="organelleDescription"></div>
+            <div class="organelle-tagline" id="organelleTagline"></div>
+            <div class="organelle-personality" id="organellePersonality"></div>
+            <div class="organelle-catchphrase" id="organelleCatchphrase"></div>
+            <div class="organelle-vibes" id="organelleVibes"></div>
+            <div class="organelle-avoids" id="organelleAvoids"></div>
             <button class="restart-btn" onclick="restartQuiz()">PLAY AGAIN</button>
         </div>
 

@@ -5,8 +5,8 @@ const questions = [
         options: [
             { text: "7am", organelle: "nucleus" },
             { text: "8am", organelle: "mitochondria" },
-            { text: "10 shuttle", organelle: "lysosome" },
-            { text: "12 shuttle", organelle: "ribosome" }
+            { text: "10 shuttle", organelle: "er" },
+            { text: "12 shuttle", organelle: "golgi" }
         ]
     },
     {
@@ -15,7 +15,7 @@ const questions = [
             { text: "Wait for the next bus", organelle: "nucleus" },
             { text: "Cycle", organelle: "mitochondria" },
             { text: "Walk", organelle: "lysosome" },
-            { text: "Go home", organelle: "ribosome" }
+            { text: "Go home", organelle: "vacuole" }
         ]
     },
     {
@@ -24,16 +24,16 @@ const questions = [
             { text: "Don't tell anyone", organelle: "nucleus" },
             { text: "Tailgate", organelle: "mitochondria" },
             { text: "Go to security", organelle: "lysosome" },
-            { text: "Go home", organelle: "ribosome" }
+            { text: "Go home", organelle: "vacuole" }
         ]
     },
     {
         question: "What is the first thing you do when you go into the office?",
         options: [
-            { text: "You check your emails", errorMessage: "no one emails you", organelle: "nucleus" },
-            { text: "You check the jobs you submitted last night", errorMessage: "all your jobs failed", organelle: "mitochondria" },
-            { text: "You chat to your colleague", errorMessage: "they're locked in", organelle: "lysosome" },
-            { text: "You read papers", errorMessage: "you got scooped", organelle: "ribosome" }
+            { text: "You check your emails", errorMessage: "no one emails you. you go for coffee.", organelle: "nucleus" },
+            { text: "You check the jobs you submitted last night", errorMessage: "all your jobs failed. you go for coffee.", organelle: "mitochondria" },
+            { text: "You chat to your colleague", errorMessage: "they're locked in. you go for coffee.", organelle: "er" },
+            { text: "You read papers", errorMessage: "you got scooped. you go for coffee.", organelle: "ribosome" }
         ]
     },
     {
@@ -41,8 +41,8 @@ const questions = [
         options: [
             { text: "Dina", organelle: "nucleus" },
             { text: "Murrays", organelle: "mitochondria" },
-            { text: "You have your instant coffee in the cupboard", organelle: "lysosome" },
-            { text: "Free coffee in the green cafe", organelle: "ribosome" }
+            { text: "You have your instant coffee in the cupboard", organelle: "golgi" },
+            { text: "Free coffee in the green cafe", organelle: "vacuole" }
         ]
     },
     {
@@ -50,7 +50,7 @@ const questions = [
         options: [
             { text: "My laptop sensed my stress and shut down in solidarity", organelle: "nucleus" },
             { text: "I made a bunch of figures but it was too much to put on the slides", organelle: "mitochondria" },
-            { text: "I'm pivoting to a more collaborative model where you do the analysis and I offer moral support", organelle: "lysosome" },
+            { text: "I'm pivoting to a more collaborative model where you do the analysis and I offer moral support", organelle: "er" },
             { text: "You're honest and you say that you haven't done it", organelle: "ribosome" }
         ]
     },
@@ -60,7 +60,7 @@ const questions = [
             { text: "You pay a million pounds for murray's lunch", organelle: "nucleus" },
             { text: "Wait for South Building free food", organelle: "mitochondria" },
             { text: "Don't wait, pretend like you're at a workshop", organelle: "lysosome" },
-            { text: "Scavenge the fridge", organelle: "ribosome" }
+            { text: "Scavenge the fridge", organelle: "golgi" }
         ]
     },
     {
@@ -68,7 +68,7 @@ const questions = [
         options: [
             { text: "I don't, I already ubered home", organelle: "nucleus" },
             { text: "1645", organelle: "mitochondria" },
-            { text: "1715", organelle: "lysosome" },
+            { text: "1715", organelle: "er" },
             { text: "I don't, I sleep at the office", organelle: "ribosome" }
         ]
     },
@@ -76,7 +76,7 @@ const questions = [
         question: "Do you have a ticket?",
         options: [
             { text: "Yes", organelle: "nucleus" },
-            { text: "No", organelle: "mitochondria" }
+            { text: "No", organelle: "vacuole" }
         ]
     }
 ];
@@ -84,20 +84,60 @@ const questions = [
 // Organelle descriptions
 const organelleDescriptions = {
     nucleus: {
-        name: "THE NUCLEUS",
-        description: "You're the control center! Like the nucleus, you're the boss who calls the shots. You're always early (7am bus crew!) and have everything planned out. You're the one who remembers their badge and has their ticket ready. Your strategic mind keeps you organized even when your laptop shuts down in solidarity. The nucleus contains the cell's DNA - you contain the blueprint for success!"
+        name: "🧠 NUCLEUS",
+        tagline: "The planner and decision-maker.",
+        personality: "Smart, organized, loves being in charge",
+        catchphrase: "Let me take it from here.",
+        vibesWith: "Ribosome, ER",
+        avoids: "Lysosome"
     },
     mitochondria: {
-        name: "THE MITOCHONDRIA",
-        description: "You're the powerhouse! Like the mitochondria, you're full of energy and enthusiasm. You're the one cycling when the bus doesn't show up, tailgating through security, and always finding the energy for Murrays coffee. Your positive energy keeps you going even when all your jobs fail. The mitochondria produces energy for the cell - you produce energy for your team!"
+        name: "🔋 MITOCHONDRIA",
+        tagline: "The energizer of the group.",
+        personality: "Driven, intense, never stops moving",
+        catchphrase: "Let's GO!",
+        vibesWith: "Nucleus, ER",
+        avoids: "Vacuole (too chill)"
+    },
+    er: {
+        name: "🧵 ENDOPLASMIC RETICULUM (ER)",
+        tagline: "The multitasking connector.",
+        personality: "Flexible, efficient, low-key brilliant",
+        catchphrase: "I'll handle it.",
+        vibesWith: "Ribosome, Golgi",
+        avoids: "Mitochondria (too much energy)"
+    },
+    golgi: {
+        name: "📦 GOLGI APPARATUS",
+        tagline: "The finisher and perfectionist.",
+        personality: "Stylish, precise, detail-obsessed",
+        catchphrase: "It's not done until it's perfect.",
+        vibesWith: "ER, Vacuole",
+        avoids: "Ribosome (too messy)"
     },
     lysosome: {
-        name: "THE LYSOSOME",
-        description: "You're the helper! Like the lysosome, you're all about cleaning up and helping others. You're the one who goes to security when you forget your badge, offers moral support to collaborators, and waits for South Building free food. Your nurturing personality makes you great at breaking down complex problems. The lysosome breaks down waste and helps the cell - you help break down problems and support your community!"
+        name: "🛡️ LYSOSOME",
+        tagline: "The clean-up crew with attitude.",
+        personality: "Fierce, honest, no time for nonsense",
+        catchphrase: "You're either useful… or you're gone.",
+        vibesWith: "Vacuole, Mitochondria",
+        avoids: "Nucleus (too bossy)"
     },
     ribosome: {
-        name: "THE RIBOSOME",
-        description: "You're the builder! Like the ribosome, you're all about creating and constructing. You're the honest one who admits when you haven't done the analysis, the resourceful one who scavenges the fridge for lunch, and the dedicated one who sleeps at the office. You're patient, methodical, and take pride in your work. The ribosome builds proteins for the cell - you build solutions for the world!"
+        name: "🔧 RIBOSOME",
+        tagline: "The quiet builder.",
+        personality: "Humble, hardworking, always tinkering",
+        catchphrase: "I made this.",
+        vibesWith: "ER, Nucleus",
+        avoids: "Golgi (too picky)"
+    },
+    vacuole: {
+        name: "🧳 VACUOLE",
+        tagline: "The laid-back hoarder.",
+        personality: "Calm, collected, emotionally deep",
+        catchphrase: "I've got space for that.",
+        vibesWith: "Golgi, Lysosome",
+        avoids: "Mitochondria (too intense)"
     }
 };
 
@@ -105,8 +145,11 @@ let currentQuestion = 0;
 let scores = {
     nucleus: 0,
     mitochondria: 0,
+    er: 0,
+    golgi: 0,
     lysosome: 0,
-    ribosome: 0
+    ribosome: 0,
+    vacuole: 0
 };
 
 function startQuiz() {
@@ -207,7 +250,25 @@ function showResults() {
     
     const result = organelleDescriptions[resultOrganelle];
     document.getElementById('organelleResult').textContent = result.name;
-    document.getElementById('organelleDescription').textContent = result.description;
+    document.getElementById('organelleTagline').textContent = result.tagline;
+    document.getElementById('organellePersonality').textContent = result.personality;
+    document.getElementById('organelleCatchphrase').textContent = result.catchphrase;
+    document.getElementById('organelleVibes').textContent = `Vibes with: ${result.vibesWith}`;
+    document.getElementById('organelleAvoids').textContent = `Avoids: ${result.avoids}`;
+    
+    // Set the organelle image
+    const imageMap = {
+        'nucleus': 'images/nucleus.jp2',
+        'mitochondria': 'images/mitochondria.jp2',
+        'er': 'images/endoplasmic.jp2',
+        'golgi': 'images/golgi.jp2',
+        'lysosome': 'images/lysosome.jp2',
+        'ribosome': 'images/ribosome.jp2',
+        'vacuole': 'images/vacuole.jp2'
+    };
+    
+    const organelleImage = document.getElementById('organelleImage');
+    organelleImage.src = imageMap[resultOrganelle] || '';
 }
 
 function restartQuiz() {
@@ -215,8 +276,11 @@ function restartQuiz() {
     scores = {
         nucleus: 0,
         mitochondria: 0,
+        er: 0,
+        golgi: 0,
         lysosome: 0,
-        ribosome: 0
+        ribosome: 0,
+        vacuole: 0
     };
     
     document.getElementById('resultScreen').style.display = 'none';

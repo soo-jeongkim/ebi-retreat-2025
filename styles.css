@@ -211,6 +211,50 @@ body {
     text-shadow: 0 0 15px #ff8c00;
 }
 
+.organelle-image-container {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.organelle-image {
+    max-width: 180px;
+    max-height: 180px;
+    border: 4px solid #ff8c00;
+    box-shadow: 
+        0 0 0 4px #000,
+        0 0 0 8px #ff8c00,
+        0 0 20px #ff8c00,
+        0 0 40px #ff8c00;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: contrast(1.2) brightness(1.1);
+    animation: pixelate 0.1s infinite;
+}
+
+.landing-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.landing-image {
+    max-width: 220px;
+    max-height: 220px;
+    border: 4px solid #ff8c00;
+    box-shadow: 
+        0 0 0 4px #000,
+        0 0 0 8px #ff8c00,
+        0 0 20px #ff8c00,
+        0 0 40px #ff8c00;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: contrast(1.2) brightness(1.1);
+    animation: pixelate 0.1s infinite;
+}
+
 .organelle-result {
     font-size: 2rem;
     margin-bottom: 30px;
@@ -218,12 +262,41 @@ body {
     animation: pixelate 0.1s infinite;
 }
 
-.organelle-description {
+.organelle-tagline {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ff8c00;
+    text-shadow: 0 0 10px #ff8c00;
+    font-weight: bold;
+}
+
+.organelle-personality {
     font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     color: #ffb366;
     text-shadow: 0 0 5px #ffb366;
+}
+
+.organelle-catchphrase {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #ff8c00;
+    text-shadow: 0 0 8px #ff8c00;
+    font-style: italic;
+}
+
+.organelle-vibes {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    color: #90EE90;
+    text-shadow: 0 0 5px #90EE90;
+}
+
+.organelle-avoids {
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    color: #FFB6C1;
+    text-shadow: 0 0 5px #FFB6C1;
 }
 
 /* Animations */
