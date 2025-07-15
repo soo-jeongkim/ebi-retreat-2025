@@ -136,6 +136,51 @@ body {
     animation: glow 2s ease-in-out infinite alternate;
 }
 
+/* Motivation Screen */
+.motivation-screen {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.motivation-message {
+    margin-bottom: 30px;
+}
+
+.motivation-message h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #ff8c00;
+    color: #ff0000;
+}
+
+.motivation-message p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #ffb366;
+    text-shadow: 0 0 5px #ffb366;
+}
+
+.next-question-btn {
+    background: #000;
+    color: #ff8c00;
+    border: 3px solid #ff8c00;
+    padding: 15px 30px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px 0;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px #ff8c00;
+}
+
+.next-question-btn:hover {
+    background: #ff8c00;
+    color: #000;
+    box-shadow: 0 0 30px #ff8c00;
+    transform: scale(1.05);
+}
+
 .result-title {
     font-size: 1.5rem;
     margin-bottom: 30px;

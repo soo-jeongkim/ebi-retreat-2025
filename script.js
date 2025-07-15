@@ -12,7 +12,7 @@ const questions = [
     {
         question: "Your bus doesn't arrive what do you do?",
         options: [
-            { text: "Wait for the next option", organelle: "nucleus" },
+            { text: "Wait for the next bus", organelle: "nucleus" },
             { text: "Cycle", organelle: "mitochondria" },
             { text: "Walk", organelle: "lysosome" },
             { text: "Go home", organelle: "ribosome" }
@@ -134,7 +134,36 @@ function showQuestion() {
 }
 
 function selectOption(organelle) {
-    scores[organelle]++;
+    // Check if this is a "Go home" option on questions 2 or 3
+    const currentQuestionData = questions[currentQuestion];
+    const selectedOption = currentQuestionData.options.find(option => option.organelle === organelle);
+    
+    if ((currentQuestion === 1 || currentQuestion === 2) && selectedOption.text === "Go home") {
+        // Show motivation screen for questions 2 and 3 (index 1 and 2)
+        showMotivationScreen();
+    } else {
+        // Normal flow
+        scores[organelle]++;
+        currentQuestion++;
+        
+        if (currentQuestion < questions.length) {
+            showQuestion();
+        } else {
+            showResults();
+        }
+    }
+}
+
+function showMotivationScreen() {
+    document.getElementById('quizScreen').style.display = 'none';
+    document.getElementById('motivationScreen').style.display = 'block';
+}
+
+function continueToNextQuestion() {
+    document.getElementById('motivationScreen').style.display = 'none';
+    document.getElementById('quizScreen').style.display = 'block';
+    
+    // Move to next question without scoring the "Go home" option
     currentQuestion++;
     
     if (currentQuestion < questions.length) {
