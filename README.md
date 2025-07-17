@@ -20,17 +20,3 @@ ebi-retreat-2025/
 
 - **Questions**: Edit the `questions` array in `script.js`
 - **Organelle Descriptions**: Update the `organelleDescriptions` object in `script.js`
-
-
-## 📱 Browser Support
-
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
-
----
-
-**Made with 🧬 for science enthusiasts and quiz lovers!**
-
-*Discover your true cellf today!* 
