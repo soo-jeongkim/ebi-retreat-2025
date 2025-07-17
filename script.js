@@ -258,13 +258,13 @@ function showResults() {
     
     // Set the organelle image
     const imageMap = {
-        'nucleus': 'images/nucleus.jp2',
-        'mitochondria': 'images/mitochondria.jp2',
-        'er': 'images/endoplasmic.jp2',
-        'golgi': 'images/golgi.jp2',
-        'lysosome': 'images/lysosome.jp2',
-        'ribosome': 'images/ribosome.jp2',
-        'vacuole': 'images/vacuole.jp2'
+        'nucleus': 'images/nucleus.jpg',
+        'mitochondria': 'images/mitochondria.jpg',
+        'er': 'images/endoplasmic.jpg',
+        'golgi': 'images/golgi.jpg',
+        'lysosome': 'images/lysosome.jpg',
+        'ribosome': 'images/ribosome.jpg',
+        'vacuole': 'images/vacuole.jpg'
     };
     
     const organelleImage = document.getElementById('organelleImage');
